@@ -1,0 +1,80 @@
+.bg-edituser-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+}
+
+.edituser-modal {
+  background-color: #fafafa;
+  border-radius: 8px;
+  padding: 25px;
+  width: 500px;
+}
+
+.edituser-modal .header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edituser-modal .header h2 {
+  text-align: left;
+}
+
+.edituser-modal .header button {
+  background: none;
+  border: none;
+}
+
+.edituser-modal form {
+  text-align: left;
+}
+
+.edituser-modal form .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.edituser-modal form .two-col {
+  display: flex;
+  gap: 10px;
+}
+
+.edituser-modal form .input-wrapper label {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.edituser-modal form .input-wrapper input {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #c2bfbf;
+}
+
+.edituser-modal form .input-wrapper small {
+  display: inline-block;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+.edituser-modal form .buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.edituser-modal form .buttons button {
+  color: white;
+  background: black;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+}
