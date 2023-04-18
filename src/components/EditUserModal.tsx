@@ -1,8 +1,7 @@
-import { FormEvent, MouseEventHandler, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import { X } from '@phosphor-icons/react'
 import './EditUserModal.css'
 import InputMask from 'react-input-mask';
-import { formatDate, unformatDate } from '../utils/formatDate';
 import { api } from '../services/api';
 
 interface EditUserModalProps {
@@ -21,7 +20,7 @@ export function EditUserModal(props: EditUserModalProps) {
   const [newEmail, setNewEmail] = useState(props.email)
   const cleanPhoneNumber = String(props.phone).replace(/[()-]/g, "");
   const [newPhone, setNewPhone] = useState(cleanPhoneNumber)
-  const [newBirthday, setNewBirthday] = useState(unformatDate(props.birthday))
+  const [newBirthday, setNewBirthday] = useState(props.birthday)
   const [newHometown, setNewHometown] = useState(props.hometown)
 
   async function handleSubmit(event: FormEvent) {
@@ -30,17 +29,29 @@ export function EditUserModal(props: EditUserModalProps) {
     if (newEmail.trim() === "" || newName.trim() === "") {
       return alert("Preencha todos os campos obrigatórios.")
     }
+    
+    if(newBirthday.trim() === "") {
+      setNewBirthday("00/00/0000")
+    }
 
-    await api.put(`users/${props.id}`, {
-      name: newName,
-      email: newEmail,
-      phone: newPhone,
-      birthday: formatDate(newBirthday),
-      hometown: newHometown
-    })
-
-    props.handleUpdate()
-    props.handleCloseModal()
+    try {
+      await api.put(`users/${props.id}`, {
+        name: newName,
+        email: newEmail,
+        phone: newPhone,
+        birthday: newBirthday,
+        hometown: newHometown
+      })
+  
+      props.handleUpdate()
+      props.handleCloseModal()
+    } catch (error: any) {
+      if (error.response) {
+        alert(error.response.data.message)
+      } else {
+        alert("Ocorreu um erro desconhecido.")
+      }
+    }
   }
 
   function cleanFields() {
@@ -50,6 +61,20 @@ export function EditUserModal(props: EditUserModalProps) {
     setNewBirthday("")
     setNewHometown("")
   }
+
+  useEffect(() => {
+    function handleKeyDown(event: { keyCode: number }) {
+      if (event.keyCode === 27) {
+        props.handleCloseModal();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [props.handleCloseModal]);
 
   return (
     <div className="bg-edituser-modal">
@@ -89,7 +114,13 @@ export function EditUserModal(props: EditUserModalProps) {
             </div>
             <div className="input-wrapper">
               <label htmlFor="birthday">Data de nascimento:</label>
-              <input value={newBirthday} onChange={(e) => setNewBirthday(e.target.value)} type="date" id="birthday" />
+              <InputMask
+                mask="99/99/9999"
+                placeholder="dd/mm/aaaa"
+                value={newBirthday}
+                onChange={(e) => setNewBirthday(e.target.value)}
+                id="birthday"
+              />
             </div>
           </div>
 

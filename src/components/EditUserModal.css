@@ -45,6 +45,10 @@
   gap: 10px;
 }
 
+.edituser-modal form .two-col .input-wrapper {
+  width: 49%;
+}
+
 .edituser-modal form .input-wrapper label {
   margin-bottom: 6px;
   font-size: 16px;

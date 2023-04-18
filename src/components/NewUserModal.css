@@ -45,6 +45,10 @@
   gap: 10px;
 }
 
+.newuser-modal form .two-col .input-wrapper {
+  width: 49%;
+}
+
 .newuser-modal form .input-wrapper label {
   margin-bottom: 6px;
   font-size: 16px;

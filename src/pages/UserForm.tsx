@@ -20,6 +20,8 @@ interface UserObject {
 export function UserForm() {
   const [users, setUsers] = useState<UserObject[]>([])
   const [inserting, setInserting] = useState(false)
+  const [queryName, setQueryName] = useState("name")
+  const [queryValue, setQueryValue] = useState("")
 
   function handleInsertModal() {
     setInserting(!inserting)
@@ -33,6 +35,15 @@ export function UserForm() {
   useEffect(() => {
     fetchUsers()
   }, [])
+
+  useEffect(() => {
+    async function fetchUsersQuery(paramName: string, paramValue: string) {
+      const { data } = await api.get(`/users?${paramName}=${paramValue}`)
+      setUsers(data)
+    }
+
+    fetchUsersQuery(queryName, queryValue)
+  }, [queryName, queryValue])
 
   return (
     <div className="userContainer">
@@ -52,15 +63,24 @@ export function UserForm() {
           />
         }
 
-        <input placeholder="Buscar..." type="text" />
+        <input
+          placeholder="Buscar..."
+          type="text"
+          value={queryValue}
+          onChange={(e) => setQueryValue(e.target.value)}
+        />
 
-        <select>
+        <select
+          value={queryName}
+          onChange={(e) => setQueryName(e.target.value)}
+        >
           <option value="name">Nome</option>
+          <option value="email">E-mail</option>
+          <option value="phone">Telefone</option>
+          <option value="birthday">Data de nascimento</option>
+          <option value="hometown">Cidade onde nasceu</option>
         </select>
       </div>
-
-      {/* <NewUserModal /> */}
-      {/* <DeleteModal /> */}
 
       <table>
         <thead>

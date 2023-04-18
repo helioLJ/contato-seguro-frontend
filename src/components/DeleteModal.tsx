@@ -1,12 +1,26 @@
-import { MouseEventHandler } from 'react'
+import { MouseEventHandler, useEffect } from 'react'
 import './DeleteModal.css'
 
 interface DeleteModalProps {
-  handleCloseModal: MouseEventHandler<HTMLButtonElement>
+  handleCloseModal: () => void
   handleDelete: MouseEventHandler<HTMLButtonElement>
 }
 
 export function DeleteModal(props: DeleteModalProps) {
+  useEffect(() => {
+    function handleKeyDown(event: { keyCode: number }) {
+      if (event.keyCode === 27) {
+        props.handleCloseModal();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [props.handleCloseModal]);
+
   return (
     <div className="bg-delete-modal">
       <div className="delete-modal">
