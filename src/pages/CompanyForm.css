@@ -1,4 +1,4 @@
-.userContainer {
+.companyContainer {
   background-color: #fafafa;
   padding: 50px 25px;
   border-radius: 8px;
@@ -10,15 +10,15 @@
   height: 800px;
 }
 
-.userContainer .search-bar {
+.companyContainer .search-bar {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 32px 0;
 }
 
-.userContainer .search-bar button,
-.userContainer table td button {
+.companyContainer .search-bar button,
+.companyContainer table td button {
   background: black;
   border: none;
   border-radius: 4px;
@@ -28,44 +28,40 @@
   padding: 8px;
 }
 
-.userContainer .search-bar input {
+.companyContainer .search-bar input {
   padding: 8px 16px;
   border-radius: 4px;
   border: 1px solid #c2bfbf;
   width: 50%;
 }
 
-.userContainer .search-bar select {
+.companyContainer .search-bar select {
   padding: 8px 16px;
   border-radius: 4px;
   border: 1px solid #c2bfbf;
 }
 
-.userContainer table {
+.companyContainer table {
   border-collapse: collapse;
   text-align: left;
   width: 100%;
 }
 
-.userContainer table th {
+.companyContainer table th {
   border-top: 1px solid #c2bfbf;
   border-bottom: 1px solid #c2bfbf;
   padding: 15px 0;
 }
 
-.userContainer table th:nth-child(1) {
-  width: 20%;
-}
-
-.userContainer table th:nth-child(2) {
+.companyContainer table th:nth-child(1) {
   width: 30%;
 }
 
-.userContainer table .buttons {
+.companyContainer table .buttons {
   display: flex;
   gap: 8px;
 }
 
-.userContainer table td {
+.companyContainer table td {
   padding: 8px 0;
 }

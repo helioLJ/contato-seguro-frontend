@@ -1,13 +1,13 @@
 import Logo from '../assets/logo.png'
 import { DeleteModal } from '../components/DeleteModal'
-import { EditUserModal } from '../components/EditUserModal'
-import { NewUserModal } from '../components/NewUserModal'
-import './UserForm.css'
+import { EditCompanyModal } from '../components/EditCompanyModal'
+import { NewCompanyModal } from '../components/NewCompanyModal'
+import './CompanyForm.css'
 import { NotePencil, Plus, Trash } from '@phosphor-icons/react'
 
-export function UserForm() {
+export function CompanyForm() {
   return (
-    <div className="userContainer">
+    <div className="companyContainer">
       <img src={Logo} alt="Logo da Contato Seguro" />
 
       <div className="search-bar">
@@ -22,28 +22,24 @@ export function UserForm() {
         </select>
       </div>
 
-      {/* <NewUserModal /> */}
-      {/* <EditUserModal /> */}
+      {/* <NewCompanyModal /> */}
+      {/* <EditCompanyModal /> */}
       {/* <DeleteModal /> */}
 
       <table>
         <thead>
           <tr>
             <th>Nome</th>
-            <th>Email</th>
-            <th>Telefone</th>
-            <th>Nascimento</th>
-            <th>Cidade</th>
+            <th>CNPJ</th>
+            <th>Endereço</th>
             <th> </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Fulano</td>
-            <td>fulano@example.com</td>
-            <td>(51) 98888-8888</td>
-            <td>13/08/2021</td>
-            <td>Porto Alegre</td>
+            <td>Contato Seguro</td>
+            <td>6458358956</td>
+            <td>Porto Alegre - RS</td>
 
             <td className="buttons">
               <button >
