@@ -56,12 +56,3 @@
 .companyContainer table th:nth-child(1) {
   width: 30%;
 }
-
-.companyContainer table .buttons {
-  display: flex;
-  gap: 8px;
-}
-
-.companyContainer table td {
-  padding: 8px 0;
-}

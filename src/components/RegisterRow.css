@@ -1,0 +1,8 @@
+.registerContainer table .buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.registerContainer table td {
+  padding: 8px 0;
+}

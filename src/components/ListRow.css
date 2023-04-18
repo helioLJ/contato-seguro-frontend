@@ -1,0 +1,16 @@
+.homeContainer table th:nth-child(1) {
+  width: 25%;
+}
+
+.homeContainer table th:nth-child(2) {
+  width: 25%;
+}
+
+.homeContainer table td:nth-child(2) {
+  font-weight: 700;
+  color: rgb(63, 61, 61);
+}
+
+.homeContainer table td {
+  padding: 8px 0;
+}

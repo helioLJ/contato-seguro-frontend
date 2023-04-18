@@ -1,0 +1,8 @@
+.userContainer table .buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.userContainer table td {
+  padding: 8px 0;
+}

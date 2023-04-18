@@ -1,7 +1,8 @@
 import Logo from '../assets/logo.png'
 import { NewRegisterModal } from '../components/NewRegisterModal'
+import { RegisterRow } from '../components/RegisterRow'
 import './RegisterForm.css'
-import { Plus, Trash } from '@phosphor-icons/react'
+import { Plus } from '@phosphor-icons/react'
 
 export function RegisterForm() {
   return (
@@ -29,17 +30,7 @@ export function RegisterForm() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Hélio Lúcio</td>
-            <td>Contato Seguro</td>
-            <td>18/04/2023</td>
-
-            <td className="buttons">
-              <button >
-                <Trash size={22} color="#f5f7f3" weight="bold" />
-              </button>
-            </td>
-          </tr>
+          <RegisterRow />
         </tbody>
       </table>
 

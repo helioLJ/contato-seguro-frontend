@@ -1,4 +1,5 @@
 import Logo from '../assets/logo.png'
+import { CompanyRow } from '../components/CompanyRow'
 import { DeleteModal } from '../components/DeleteModal'
 import { EditCompanyModal } from '../components/EditCompanyModal'
 import { NewCompanyModal } from '../components/NewCompanyModal'
@@ -36,20 +37,7 @@ export function CompanyForm() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Contato Seguro</td>
-            <td>6458358956</td>
-            <td>Porto Alegre - RS</td>
-
-            <td className="buttons">
-              <button >
-                <NotePencil size={22} color="#f5f7f3" weight="bold" />
-              </button>
-              <button >
-                <Trash size={22} color="#f5f7f3" weight="bold" />
-              </button>
-            </td>
-          </tr>
+          <CompanyRow />
         </tbody>
       </table>
 

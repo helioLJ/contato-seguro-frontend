@@ -1,0 +1,8 @@
+.companyContainer table .buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.companyContainer table td {
+  padding: 8px 0;
+}

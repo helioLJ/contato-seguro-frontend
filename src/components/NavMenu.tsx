@@ -10,13 +10,13 @@ export function NavMenu() {
             <NavLink to="/">Lista</NavLink>
           </li>
           <li>
-            <NavLink to="/users" >Usuários</NavLink>
+            <NavLink to="/users">Usuários</NavLink>
           </li>
           <li>
-            <NavLink to="/companies" >Empresas</NavLink>
+            <NavLink to="/companies">Empresas</NavLink>
           </li>
           <li>
-            <NavLink to="/register" >Registros</NavLink>
+            <NavLink to="/register">Registros</NavLink>
           </li>
         </ul>
       </nav>
