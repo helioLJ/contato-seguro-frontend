@@ -1,0 +1,60 @@
+.homeContainer {
+  background-color: #fafafa;
+  padding: 50px 25px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 1600px;
+  width: 100%;
+  margin: 5rem auto;
+  overflow-y: auto;
+  height: 800px;
+}
+
+.homeContainer .search-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 32px 0;
+}
+
+.homeContainer .search-bar input {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #c2bfbf;
+  width: 50%;
+}
+
+.homeContainer .search-bar select {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #c2bfbf;
+}
+
+.homeContainer table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+}
+
+.homeContainer table th {
+  border-top: 1px solid #c2bfbf;
+  border-bottom: 1px solid #c2bfbf;
+  padding: 15px 0;
+}
+
+.homeContainer table th:nth-child(1) {
+  width: 25%;
+}
+
+.homeContainer table th:nth-child(2) {
+  width: 25%;
+}
+
+.homeContainer table td:nth-child(2) {
+  font-weight: 700;
+  color: rgb(63, 61, 61);
+}
+
+.homeContainer table td {
+  padding: 8px 0;
+}

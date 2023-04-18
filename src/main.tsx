@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom/client'
 
 import './global.css'
 
-import { UserForm } from './pages/UserForm'
-import { CompanyForm } from './pages/CompanyForm'
-import { RegisterForm } from './pages/RegisterForm'
+import { BrowserRouter } from 'react-router-dom'
+import { AppRoutes } from './routes/app.routes'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    {/* <UserForm /> */}
-    {/* <CompanyForm /> */}
-    <RegisterForm />
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   </React.StrictMode>,
 )
