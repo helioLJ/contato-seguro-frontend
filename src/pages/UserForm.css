@@ -17,7 +17,7 @@
   margin: 32px 0;
 }
 
-.userContainer .search-bar button,
+.userContainer .search-bar > button,
 .userContainer table td button {
   background: black;
   border: none;
@@ -28,14 +28,14 @@
   padding: 8px;
 }
 
-.userContainer .search-bar input {
+.userContainer .search-bar > input {
   padding: 8px 16px;
   border-radius: 4px;
   border: 1px solid #c2bfbf;
   width: 50%;
 }
 
-.userContainer .search-bar select {
+.userContainer .search-bar > select {
   padding: 8px 16px;
   border-radius: 4px;
   border: 1px solid #c2bfbf;
