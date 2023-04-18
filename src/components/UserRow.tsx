@@ -4,6 +4,7 @@ import './UserRow.css'
 import { NotePencil, Trash } from '@phosphor-icons/react'
 import { DeleteModal } from './DeleteModal'
 import { api } from '../services/api'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 interface UserRowProps {
   id: number
@@ -53,17 +54,23 @@ export function UserRow(props: UserRowProps) {
           <NotePencil size={22} color="#f5f7f3" weight="bold" />
         </button>
 
-        {editingId !== 0 ?
-          <EditUserModal
-            id={props.id}
-            name={props.name}
-            email={props.email}
-            phone={props.phone}
-            birthday={props.birthday}
-            hometown={props.hometown}
-            handleCloseModal={closeEditModal}
-            handleUpdate={props.handleUpdate}
-          /> : ""}
+        <TransitionGroup>
+          {editingId !== 0 ?
+            <CSSTransition classNames="modal" timeout={300}>
+              <EditUserModal
+                id={props.id}
+                name={props.name}
+                email={props.email}
+                phone={props.phone}
+                birthday={props.birthday}
+                hometown={props.hometown}
+                handleCloseModal={closeEditModal}
+                handleUpdate={props.handleUpdate}
+              />
+            </CSSTransition> : ""
+          }
+        </TransitionGroup>
+
 
         <button
           onClick={showDeleteModal}
@@ -71,11 +78,17 @@ export function UserRow(props: UserRowProps) {
           <Trash size={22} color="#f5f7f3" weight="bold" />
         </button>
 
-        {deletingId !== 0 ?
-          <DeleteModal
-            handleCloseModal={closeDeleteModal}
-            handleDelete={deleteRow}
-          /> : ""}
+        <TransitionGroup>
+          {deletingId !== 0 ?
+            <CSSTransition classNames="modal" timeout={300}>
+              <DeleteModal
+                handleCloseModal={closeDeleteModal}
+                handleDelete={deleteRow}
+              />
+            </CSSTransition> : ""
+          }
+        </TransitionGroup>
+
 
       </td>
     </tr>

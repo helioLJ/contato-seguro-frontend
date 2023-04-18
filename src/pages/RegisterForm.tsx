@@ -5,6 +5,7 @@ import { RegisterRow } from '../components/RegisterRow'
 import './RegisterForm.css'
 import { Plus } from '@phosphor-icons/react'
 import { api } from '../services/api'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 interface RegisterObject {
   id: number
@@ -47,45 +48,6 @@ export function RegisterForm() {
     fetchRegistersQuery(queryName, queryValue)
   }, [queryName, queryValue])
 
-  interface UserObject {
-  birthday: string
-  created_at: string
-  email: string
-  hometown: string
-  id: number
-  name: string
-  phone: number
-  updated_at: string
-}
-
-interface CompanyObject {
-  address: string
-  cnpj: string
-  created_at: string
-  id: number
-  name: string
-  updated_at: string
-}
-const [users, setUsers] = useState<UserObject[]>([])
-  const [companies, setCompanies] = useState<CompanyObject[]>([])
-
-  async function fetchUsers() {
-    const { data } = await api.get("/users")
-    setUsers(data)
-    console.log(data);
-  }
-
-  async function fetchCompanies() {
-    const { data } = await api.get("/companies")
-    setCompanies(data)
-    console.log(data);
-  }
-
-  useEffect(() => {
-    fetchUsers()
-    fetchCompanies()
-  }, [])
-
   return (
     <div className="registerContainer">
       <img src={Logo} alt="Logo da Contato Seguro" />
@@ -113,12 +75,16 @@ const [users, setUsers] = useState<UserObject[]>([])
         </select>
       </div>
 
-      {inserting &&
-        <NewRegisterModal
-          handleCloseModal={handleInsertModal}
-          handleUpdate={fetchRegisters}
-        />
-      }
+      <TransitionGroup>
+        {inserting &&
+          <CSSTransition classNames="modal" timeout={300}>
+            <NewRegisterModal
+              handleCloseModal={handleInsertModal}
+              handleUpdate={fetchRegisters}
+            />
+          </CSSTransition>
+        }
+      </TransitionGroup>
 
       <table>
         <thead>

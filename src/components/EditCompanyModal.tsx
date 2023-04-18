@@ -3,6 +3,7 @@ import './EditCompanyModal.css'
 import { FormEvent, useEffect, useState } from 'react'
 import InputMask from 'react-input-mask';
 import { api } from '../services/api'
+import { AxiosError } from 'axios';
 
 interface EditCompanyModal {
   handleCloseModal: () => void
@@ -34,7 +35,7 @@ export function EditCompanyModal(props: EditCompanyModal) {
 
       props.handleUpdate()
       props.handleCloseModal()
-    } catch (error: any) {
+    } catch (error) {
       if (error.response) {
         alert(error.response.data.message)
       } else {

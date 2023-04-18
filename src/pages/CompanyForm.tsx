@@ -5,6 +5,7 @@ import { NewCompanyModal } from '../components/NewCompanyModal'
 import './CompanyForm.css'
 import { Plus } from '@phosphor-icons/react'
 import { api } from '../services/api'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 interface CompanyObject {
   address: string
@@ -54,12 +55,16 @@ export function CompanyForm() {
           <Plus size={22} color="#f5f7f3" weight="bold" />
         </button>
 
-        {inserting &&
-          <NewCompanyModal
-            handleCloseModal={handleInsertModal}
-            handleUpdate={fetchCompanies}
-          />
-        }
+        <TransitionGroup>
+          {inserting &&
+            <CSSTransition classNames="modal" timeout={300}>
+              <NewCompanyModal
+                handleCloseModal={handleInsertModal}
+                handleUpdate={fetchCompanies}
+              />
+            </CSSTransition>
+          }
+        </TransitionGroup>
 
         <input
           placeholder="Buscar..."

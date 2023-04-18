@@ -5,6 +5,7 @@ import './UserForm.css'
 import { Plus } from '@phosphor-icons/react'
 import { api } from '../services/api'
 import { useEffect, useState } from 'react'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 interface UserObject {
   birthday: string
@@ -56,12 +57,16 @@ export function UserForm() {
           <Plus size={22} color="#f5f7f3" weight="bold" />
         </button>
 
-        {inserting &&
-          <NewUserModal
-            handleCloseModal={handleInsertModal}
-            handleUpdate={fetchUsers}
-          />
-        }
+        <TransitionGroup>
+          {inserting &&
+            <CSSTransition classNames="modal" timeout={300}>
+              <NewUserModal
+                handleCloseModal={handleInsertModal}
+                handleUpdate={fetchUsers}
+              />
+            </CSSTransition>
+          }
+        </TransitionGroup>
 
         <input
           placeholder="Buscar..."

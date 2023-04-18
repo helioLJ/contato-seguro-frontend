@@ -76,6 +76,10 @@ export function Home() {
         </thead>
         <tbody>
           {
+            list.length === 0 ?
+            (
+              <p>Adicione Usuários, Empresas e Registros pra que apareça aqui!</p>
+            ) :
             list.map(item => (
               <ListRow
                 key={item.user.email}

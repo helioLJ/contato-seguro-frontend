@@ -4,6 +4,7 @@ import { NotePencil, Trash } from '@phosphor-icons/react'
 import { api } from '../services/api'
 import { EditCompanyModal } from './EditCompanyModal'
 import { DeleteModal } from './DeleteModal'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 interface CompanyRowProps {
   id: number
@@ -49,27 +50,36 @@ export function CompanyRow(props: CompanyRowProps) {
           <NotePencil size={22} color="#f5f7f3" weight="bold" />
         </button>
 
-        {editingId !== 0 ?
-          <EditCompanyModal
-            id={props.id}
-            name={props.name}
-            cnpj={props.cnpj}
-            address={props.address}
-            handleCloseModal={closeEditModal}
-            handleUpdate={props.handleUpdate}
-          /> : ""}
-
+        <TransitionGroup>
+          {editingId !== 0 ?
+            <CSSTransition classNames="modal" timeout={300}>
+              <EditCompanyModal
+                id={props.id}
+                name={props.name}
+                cnpj={props.cnpj}
+                address={props.address}
+                handleCloseModal={closeEditModal}
+                handleUpdate={props.handleUpdate}
+              />
+            </CSSTransition> : ""
+          }
+        </TransitionGroup>
         <button
           onClick={showDeleteModal}
         >
           <Trash size={22} color="#f5f7f3" weight="bold" />
         </button>
 
-        {deletingId !== 0 ?
-          <DeleteModal
-            handleCloseModal={closeDeleteModal}
-            handleDelete={deleteRow}
-          /> : ""}
+        <TransitionGroup>
+          {deletingId !== 0 ?
+            <CSSTransition classNames="modal" timeout={300}>
+              <DeleteModal
+                handleCloseModal={closeDeleteModal}
+                handleDelete={deleteRow}
+              />
+            </CSSTransition> : ""
+          }
+        </TransitionGroup>
 
       </td>
     </tr>
