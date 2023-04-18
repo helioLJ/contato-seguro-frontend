@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState } from 'react'
+import { useState } from 'react'
 import { EditUserModal } from './EditUserModal'
 import './UserRow.css'
 import { NotePencil, Trash } from '@phosphor-icons/react'
@@ -25,9 +25,6 @@ export function UserRow(props: UserRowProps) {
   function closeEditModal() {
     setEditingId(0)
   }
-  // function saveEdit() {
-
-  // }
 
   function showDeleteModal() {
     setDeletingId(props.id)

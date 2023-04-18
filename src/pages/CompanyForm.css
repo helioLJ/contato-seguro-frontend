@@ -17,7 +17,7 @@
   margin: 32px 0;
 }
 
-.companyContainer .search-bar button,
+.companyContainer .search-bar > button,
 .companyContainer table td button {
   background: black;
   border: none;
@@ -28,31 +28,31 @@
   padding: 8px;
 }
 
-.companyContainer .search-bar input {
+.companyContainer .search-bar > input {
   padding: 8px 16px;
   border-radius: 4px;
   border: 1px solid #c2bfbf;
   width: 50%;
 }
 
-.companyContainer .search-bar select {
+.companyContainer .search-bar > select {
   padding: 8px 16px;
   border-radius: 4px;
   border: 1px solid #c2bfbf;
 }
 
-.companyContainer table {
+.companyContainer > table {
   border-collapse: collapse;
   text-align: left;
   width: 100%;
 }
 
-.companyContainer table th {
+.companyContainer > table th {
   border-top: 1px solid #c2bfbf;
   border-bottom: 1px solid #c2bfbf;
   padding: 15px 0;
 }
 
-.companyContainer table th:nth-child(1) {
+.companyContainer > table th:nth-child(1) {
   width: 30%;
 }

@@ -76,7 +76,6 @@ export function NewUserModal(props: NewUserModalProps) {
           <h2>Inserir</h2>
           <button
             onClick={props.handleCloseModal}
-
           >
             <X size={12} color="#979292" weight="bold" />
           </button>
