@@ -1,0 +1,80 @@
+.bg-newregister-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+}
+
+.newregister-modal {
+  background-color: #fafafa;
+  border-radius: 8px;
+  padding: 25px;
+  width: 500px;
+}
+
+.newregister-modal .header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newregister-modal .header h2 {
+  text-align: left;
+}
+
+.newregister-modal .header button {
+  background: none;
+  border: none;
+}
+
+.newregister-modal form {
+  text-align: left;
+}
+
+.newregister-modal form .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.newregister-modal form .input-wrapper label {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.newregister-modal form .input-wrapper input {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #c2bfbf;
+}
+.newregister-modal form .input-wrapper select {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #c2bfbf;
+}
+
+.newregister-modal form .input-wrapper small {
+  display: inline-block;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+.newregister-modal form .buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.newregister-modal form .buttons button {
+  color: white;
+  background: black;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+}
