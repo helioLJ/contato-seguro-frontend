@@ -1,14 +1,26 @@
 import './ListRow.css'
 
-export function ListRow() {
+interface ListRowProps {
+  name: string
+  companies: string[]
+  email: string
+  phone: number
+  birthday: string
+  hometown: string
+  handleUpdate: () => Promise<void>
+}
+
+export function ListRow(props: ListRowProps) {
+  const formattedCompanies = props.companies.join(', ');
+
   return (
     <tr>
-      <td>Fulano</td>
-      <td>Contato Seguro, Spotify</td>
-      <td>fulano@example.com</td>
-      <td>(51) 98888-8888</td>
-      <td>13/08/2021</td>
-      <td>Porto Alegre</td>
+      <td>{props.name}</td>
+      <td>{formattedCompanies}</td>
+      <td>{props.email}</td>
+      <td>{props.phone}</td>
+      <td>{props.birthday}</td>
+      <td>{props.hometown}</td>
     </tr>
   )
 }
