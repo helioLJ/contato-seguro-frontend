@@ -35,6 +35,12 @@
   width: 50%;
 }
 
+.registerContainer .search-bar select {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #c2bfbf;
+}
+
 .registerContainer table {
   border-collapse: collapse;
   text-align: left;
