@@ -6,7 +6,7 @@ Parte frontend do teste técnico da Contato Seguro.
 - Node.js
 - Yarn ou npm
 
-### Instruções
+### Instruções para rodar localmente
 1. Clone o repositório e entre na pasta do projeto:
 
 ```bash
@@ -21,10 +21,17 @@ ou
 ```bash
 npm install
 ```
-3. Crie um arquivo .env.local na raiz do projeto e preencha as variáveis de ambiente necessárias para se comunicar com sua API backend:
+3. Caso queria rodar localmente o da API Contato Seguro, em services/api.ts mude para:
 ```bash
-REACT_APP_API_URL=http://localhost:8000
+import axios from 'axios'
+
+export const api = axios.create({
+  baseURL: "https://localhost:5173"
+})
 ```
+(É importante lembrar que para isso, você precisa ter clonado a (API)[https://github.com/helioLJ/contato-seguro-backend], instalado as dependencias e rodar localmente o server.
+
+
 4. Inicie a aplicação:
 ```bash
 yarn run dev
@@ -33,7 +40,7 @@ ou
 ```bash
 npm run dev
 ```
-5. Abra o navegador em http://localhost:5173.
+5. Abra o navegador em http://localhost:PORT.
 
 ## Tecnologias Utilizadas
 
