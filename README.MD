@@ -50,5 +50,12 @@ npm run dev
 - react-input-mask
 - react-transition-group
 
+## Resposta do participante
+_Responda aqui quais foram suas dificuldades e explique a sua solução_
+
+- Um pouco de dificuldade no backend, já que não sou muito familiarizado, mas com bastante pesquisa consegui criar a API funcional
+- Escolhi o SQLite porque não precisa de um servidor separado, o que significa não precisar configurar, gerenciar ou manter um servidor de banco de dados separado. Isso se mostra muito útil em projetos menores.
+- Nunca havia implementado testes na prática, apenas tinha aprendido o conceito, então criar testes, ainda mais no frontend, foi um desafio que consegui superar e aprender mais sobre testes unitários com React.js
+
 ## Licença
 Este projeto está licenciado sob a [MIT License](./LICENSE).
