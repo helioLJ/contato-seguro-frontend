@@ -77,21 +77,23 @@ export function Home() {
         <tbody>
           {
             list.length === 0 ?
-            (
-              <p>Adicione Usuários, Empresas e Registros pra que apareça aqui!</p>
-            ) :
-            list.map(item => (
-              <ListRow
-                key={item.user.email}
-                name={item.user.name}
-                companies={item.companies}
-                email={item.user.email}
-                phone={item.user.phone}
-                birthday={item.user.birthday}
-                hometown={item.user.hometown}
-                handleUpdate={fetchList}
-              />
-            ))
+              (
+                <tr>
+                  <td>Adicione Usuários, Empresas e Registros pra que apareça aqui!</td>
+                </tr>
+              ) :
+              list.map(item => (
+                <ListRow
+                  key={item.user.email}
+                  name={item.user.name}
+                  companies={item.companies}
+                  email={item.user.email}
+                  phone={item.user.phone}
+                  birthday={item.user.birthday}
+                  hometown={item.user.hometown}
+                  handleUpdate={fetchList}
+                />
+              ))
           }
         </tbody>
       </table>
