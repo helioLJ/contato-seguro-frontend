@@ -51,6 +51,7 @@ export function RegisterForm() {
   return (
     <div className="registerContainer">
       <img src={Logo} alt="Logo da Contato Seguro" />
+      <h2>Insira, pesquise, edite e delete registros</h2>
 
       <div className="search-bar">
         <button

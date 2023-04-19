@@ -47,6 +47,7 @@ export function CompanyForm() {
   return (
     <div className="companyContainer">
       <img src={Logo} alt="Logo da Contato Seguro" />
+      <h2>Insira, pesquise, edite e delete empresas</h2>
 
       <div className="search-bar">
         <button

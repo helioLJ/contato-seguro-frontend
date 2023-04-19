@@ -41,6 +41,7 @@ export function Home() {
   return (
     <div className="homeContainer">
       <img src={Logo} alt="Logo da Contato Seguro" />
+      <h2>Lista de Usuários e Empresas</h2>
 
       <div className="search-bar">
         <input

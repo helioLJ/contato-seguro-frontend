@@ -49,7 +49,7 @@ export function UserForm() {
   return (
     <div className="userContainer">
       <img src={Logo} alt="Logo da Contato Seguro" />
-
+      <h2>Insira, pesquise, edite e delete usuários</h2>
       <div className="search-bar">
         <button
           onClick={handleInsertModal}
