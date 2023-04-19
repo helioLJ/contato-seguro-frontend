@@ -53,6 +53,7 @@ export function UserForm() {
       <div className="search-bar">
         <button
           onClick={handleInsertModal}
+          data-testid="insert-button"
         >
           <Plus size={22} color="#f5f7f3" weight="bold" />
         </button>

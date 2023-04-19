@@ -73,7 +73,7 @@ export function NewUserModal(props: NewUserModalProps) {
     <div className="bg-newuser-modal">
       <div className="newuser-modal">
         <div className="header">
-          <h2>Inserir</h2>
+          <h2>Inserir usuário!</h2>
           <button
             onClick={props.handleCloseModal}
           >
