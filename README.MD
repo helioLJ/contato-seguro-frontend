@@ -42,6 +42,7 @@ npm run dev
 - TypeScript
 - Axios
 - React Router DOM
+- Jest and Testing Library
 
 ### Outras Libs
 
