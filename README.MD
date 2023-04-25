@@ -26,7 +26,7 @@ npm install
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: "https://localhost:5173"
+  baseURL: "https://localhost:3333"
 })
 ```
 (É importante lembrar que para isso, você precisa ter clonado a (API)[https://github.com/helioLJ/contato-seguro-backend], instalado as dependencias e rodar localmente o server.
